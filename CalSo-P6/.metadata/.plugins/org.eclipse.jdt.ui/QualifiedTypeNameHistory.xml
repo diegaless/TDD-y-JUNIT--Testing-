@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.jmock.integration.junit4.JUnitRuleMockery"/>
+<fullyQualifiedTypeName name="org.junit.Rule"/>
+<fullyQualifiedTypeName name="operativa.cuentas.GestorCuentas"/>
+<fullyQualifiedTypeName name="org.jmock.Expectations"/>
+<fullyQualifiedTypeName name="operativa.cuentas.Cuenta"/>
+<fullyQualifiedTypeName name="org.hamcrest.CoreMatchers"/>
+<fullyQualifiedTypeName name="operativa.cuentas.ServicioCuentas"/>
+<fullyQualifiedTypeName name="test.operativa.cuentas.ServicioCuentasTest"/>
+<fullyQualifiedTypeName name="operativa.cuentas.ServicioDivisas"/>
+<fullyQualifiedTypeName name="operativa.cuentas.Divisa"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,71 @@
+package subastas;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class SubastaMinimaTest extends SubastaTest{
+	
+	private Usuario propietario;
+	private String producto;
+	private SubastaMinima subasta2;
+	
+	@Before
+	public void setUp(){
+		propietario = new Usuario("User",50);
+		producto = new String("Producto1");
+		this.subasta = new SubastaMinima(propietario,producto,3);
+		subasta2 = new SubastaMinima(propietario,producto,3);
+	}
+	
+	@Test
+	public void pujar(){
+		Usuario user = new Usuario("user",10);
+		assertFalse(subasta2.pujar(user));
+	}
+	
+	@Test
+	public void pujar2(){
+		Usuario user = new Usuario("user",1);
+		assertTrue(subasta2.pujar(user,40));
+	}
+	
+	@Test(expected = Exception.class)
+	public void cerrar(){
+		subasta2.setAbierta(false);
+		subasta2.cerrar();
+	}
+	
+	public void cerrar2(){
+		subasta2.setAbierta(true);
+		subasta2.cerrar();
+	}
+	
+	@Test
+	public void ejecutar3(){
+		Usuario user = new Usuario("user",10);
+		assertFalse(subasta2.ejecutar());
+	}
+
+	@Test
+	public void ejecutar4(){
+		Usuario user = new Usuario("user",10);
+		subasta2.pujar(user,9);
+		assertTrue(subasta2.ejecutar());
+	}
+	
+	@Test
+	public void testGetCantidadMinima(){
+		assertNotNull(subasta2.getCantidadMinima());
+	}
+	
+	@Test
+	public void testSetCantidadMinima(){
+		subasta2.setCantidadMinima(5);
+		assertEquals(subasta2.getCantidadMinima(),5);
+	}
+	
+}
+
+	

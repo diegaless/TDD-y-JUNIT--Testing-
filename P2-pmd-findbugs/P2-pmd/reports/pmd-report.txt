@@ -1,0 +1,16 @@
+src/juego/geometria/Punto.java:3:	Avoid importing anything from the package java.lang
+src/juego/geometria/Punto.java:4:	Avoid unused imports such as 'java.util.Random'
+src/juego/geometria/Punto.java:53:	Switch statements should have a default label
+src/juego/geometria/Punto.java:75:	Potential violation of Law of Demeter (method chain calls)
+src/juego/geometria/Punto.java:116:	Avoid unused private methods such as 'distancia(Punto)'.
+src/juego/geometria/Punto.java:117:	Potential violation of Law of Demeter (method chain calls)
+src/juego/geometria/Punto.java:117:	Potential violation of Law of Demeter (method chain calls)
+src/juego/geometria/Punto.java:117:	Potential violation of Law of Demeter (method chain calls)
+src/juego/geometria/Punto.java:117:	Potential violation of Law of Demeter (method chain calls)
+src/juego/geometria/Punto.java:126:	The method name and parameter number are suspiciously close to equals(Object)
+src/juego/geometria/Punto.java:132:	Useless parentheses.
+src/juego/geometria/Punto.java:135:	clone() method should be implemented only if implementing Cloneable interface
+src/juego/geometria/circulo.java:4:	The field name indicates a constant but its modifiers do not
+src/juego/geometria/circulo.java:9:	Avoid unused constructor parameters such as 'centroIni'.
+src/juego/pruebas/Programa.java:5:	All methods are static.  Consider using a utility class instead. Alternatively, you could add a private constructor or make the class abstract to silence this warning.
+src/juego/pruebas/Programa.java:18:	Use equals() to compare strings instead of '==' or '!='

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="3" timestamp="1538586506501" analysisTimestamp="1538586505986" release="">
+  <Project projectName="P2-finbugs">
+    <Jar>C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-finbugs\bin</Jar>
+    <AuxClasspathEntry>C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-finbugs\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_181\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-finbugs\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="CN_IMPLEMENTS_CLONE_BUT_NOT_CLONEABLE" priority="1" rank="14" abbrev="CN" category="BAD_PRACTICE" first="1">
+    <Class classname="juego.geometria.Punto">
+      <SourceLine classname="juego.geometria.Punto" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Class>
+    <Method classname="juego.geometria.Punto" name="clone" signature="()Ljuego/geometria/Punto;" isStatic="false">
+      <SourceLine classname="juego.geometria.Punto" start="142" end="147" startBytecode="0" endBytecode="96" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="EQ_SELF_USE_OBJECT" priority="2" rank="8" abbrev="Eq" category="CORRECTNESS" first="1">
+    <Class classname="juego.geometria.Punto">
+      <SourceLine classname="juego.geometria.Punto" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Class>
+    <Method classname="juego.geometria.Punto" name="equals" signature="(Ljuego/geometria/Punto;)Z" isStatic="false">
+      <SourceLine classname="juego.geometria.Punto" start="129" end="134" startBytecode="0" endBytecode="123" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="HE_EQUALS_USE_HASHCODE" priority="2" rank="16" abbrev="HE" category="BAD_PRACTICE" first="1">
+    <Class classname="juego.geometria.Punto">
+      <SourceLine classname="juego.geometria.Punto" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Class>
+    <Method classname="juego.geometria.Punto" name="equals" signature="(Ljuego/geometria/Punto;)Z" isStatic="false">
+      <SourceLine classname="juego.geometria.Punto" start="129" end="134" startBytecode="0" endBytecode="123" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="juego.geometria.Punto">
+      <SourceLine classname="juego.geometria.Punto" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Class>
+    <Method classname="juego.geometria.Punto" name="Adyacente" signature="(Ljuego/geometria/Direccion;)Ljuego/geometria/Punto;" isStatic="false">
+      <SourceLine classname="juego.geometria.Punto" start="51" end="62" startBytecode="0" endBytecode="198" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NP_BOOLEAN_RETURN_NULL" priority="1" rank="12" abbrev="NP" category="BAD_PRACTICE" first="1">
+    <Class classname="juego.geometria.Punto">
+      <SourceLine classname="juego.geometria.Punto" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Class>
+    <Method classname="juego.geometria.Punto" name="isAdyacente" signature="(Ljuego/geometria/Punto;Ljuego/geometria/Direccion;)Ljava/lang/Boolean;" isStatic="false">
+      <SourceLine classname="juego.geometria.Punto" start="73" end="77" startBytecode="0" endBytecode="118" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Method>
+    <SourceLine classname="juego.geometria.Punto" start="77" end="77" startBytecode="20" endBytecode="20" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    <SourceLine classname="juego.geometria.Punto" start="77" end="77" startBytecode="20" endBytecode="20" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+  </BugInstance>
+  <BugInstance type="NP_CLONE_COULD_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE" first="1">
+    <Class classname="juego.geometria.Punto">
+      <SourceLine classname="juego.geometria.Punto" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Class>
+    <Method classname="juego.geometria.Punto" name="clone" signature="()Ljuego/geometria/Punto;" isStatic="false">
+      <SourceLine classname="juego.geometria.Punto" start="142" end="147" startBytecode="0" endBytecode="96" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Method>
+    <SourceLine classname="juego.geometria.Punto" start="147" end="147" startBytecode="12" endBytecode="12" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    <SourceLine classname="juego.geometria.Punto" start="147" end="147" startBytecode="12" endBytecode="12" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+  </BugInstance>
+  <BugInstance type="UPM_UNCALLED_PRIVATE_METHOD" priority="3" rank="20" abbrev="UPM" category="PERFORMANCE" first="1">
+    <Class classname="juego.geometria.Punto">
+      <SourceLine classname="juego.geometria.Punto" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Class>
+    <Method classname="juego.geometria.Punto" name="distancia" signature="(Ljuego/geometria/Punto;)D" isStatic="false">
+      <SourceLine classname="juego.geometria.Punto" start="119" end="119" startBytecode="0" endBytecode="88" sourcefile="Punto.java" sourcepath="juego/geometria/Punto.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_CLASS_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="juego.geometria.circulo">
+      <SourceLine classname="juego.geometria.circulo" start="8" end="26" sourcefile="circulo.java" sourcepath="juego/geometria/circulo.java"/>
+    </Class>
+  </BugInstance>
+  <BugInstance type="UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR" priority="3" rank="20" abbrev="UwF" category="STYLE" first="1">
+    <Class classname="juego.geometria.circulo">
+      <SourceLine classname="juego.geometria.circulo" sourcefile="circulo.java" sourcepath="juego/geometria/circulo.java"/>
+    </Class>
+    <Field classname="juego.geometria.circulo" name="centro" signature="Ljuego/geometria/Punto;" isStatic="false">
+      <SourceLine classname="juego.geometria.circulo" sourcefile="circulo.java" sourcepath="juego/geometria/circulo.java"/>
+    </Field>
+    <Method classname="juego.geometria.circulo" name="desplazar" signature="(II)V" isStatic="false">
+      <SourceLine classname="juego.geometria.circulo" start="25" end="26" startBytecode="0" endBytecode="79" sourcefile="circulo.java" sourcepath="juego/geometria/circulo.java"/>
+    </Method>
+    <SourceLine classname="juego.geometria.circulo" start="25" end="25" startBytecode="7" endBytecode="7" sourcefile="circulo.java" sourcepath="juego/geometria/circulo.java"/>
+    <SourceLine classname="juego.geometria.circulo" start="25" end="25" startBytecode="7" endBytecode="7" sourcefile="circulo.java" sourcepath="juego/geometria/circulo.java"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED" priority="1" rank="3" abbrev="RV" category="CORRECTNESS" first="1">
+    <Class classname="juego.pruebas.Programa">
+      <SourceLine classname="juego.pruebas.Programa" sourcefile="Programa.java" sourcepath="juego/pruebas/Programa.java"/>
+    </Class>
+    <Method classname="juego.pruebas.Programa" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="juego.pruebas.Programa" start="8" end="21" startBytecode="0" endBytecode="267" sourcefile="Programa.java" sourcepath="juego/pruebas/Programa.java"/>
+    </Method>
+    <Method classname="java.lang.String" name="concat" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.lang.String"/>
+    </Method>
+    <SourceLine classname="juego.pruebas.Programa" start="16" end="16" startBytecode="46" endBytecode="46" sourcefile="Programa.java" sourcepath="juego/pruebas/Programa.java"/>
+    <SourceLine classname="juego.pruebas.Programa" start="16" end="16" startBytecode="46" endBytecode="46" sourcefile="Programa.java" sourcepath="juego/pruebas/Programa.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 3 Oct 2018 18:11:28 +0200" total_classes="4" referenced_classes="29" total_bugs="10" total_size="126" num_packages="2" java_version="1.8.0_181" vm_version="25.181-b13" cpu_seconds="5.76" clock_seconds="108.35" peak_mbytes="233.90" alloc_mbytes="494.94" gc_seconds="0.53" priority_3="2" priority_2="5" priority_1="3">
+    <PackageStats package="juego.geometria" total_bugs="9" total_types="3" total_size="113" priority_3="2" priority_2="5" priority_1="2">
+      <ClassStats class="juego.geometria.Direccion" sourceFile="Direccion.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="juego.geometria.Punto" sourceFile="Punto.java" interface="false" size="70" bugs="7" priority_3="1" priority_2="4" priority_1="2"/>
+      <ClassStats class="juego.geometria.circulo" sourceFile="circulo.java" interface="false" size="16" bugs="2" priority_3="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="juego.pruebas" total_bugs="1" total_types="1" total_size="13" priority_1="1">
+      <ClassStats class="juego.pruebas.Programa" sourceFile="Programa.java" interface="false" size="13" bugs="1" priority_1="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="120" invocations="370" avgMicrosecondsPerInvocation="324" maxMicrosecondsPerInvocation="20719" standardDeviationMircosecondsPerInvocation="1169"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="117" invocations="2" avgMicrosecondsPerInvocation="58812" maxMicrosecondsPerInvocation="107389" standardDeviationMircosecondsPerInvocation="48577"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="41" invocations="372" avgMicrosecondsPerInvocation="111" maxMicrosecondsPerInvocation="245" standardDeviationMircosecondsPerInvocation="36"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="19" invocations="29" avgMicrosecondsPerInvocation="673" maxMicrosecondsPerInvocation="5030" standardDeviationMircosecondsPerInvocation="1094"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="15" invocations="29" avgMicrosecondsPerInvocation="543" maxMicrosecondsPerInvocation="5152" standardDeviationMircosecondsPerInvocation="988"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="14" invocations="99" avgMicrosecondsPerInvocation="145" maxMicrosecondsPerInvocation="595" standardDeviationMircosecondsPerInvocation="139"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="11" invocations="334" avgMicrosecondsPerInvocation="34" maxMicrosecondsPerInvocation="446" standardDeviationMircosecondsPerInvocation="47"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1538586427124" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1538586427124" release="" codeSize="126" numClasses="4"/>
+    <AppVersion sequence="2" timestamp="1538586500214" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>

@@ -1,0 +1,27 @@
+package test.operativa.cuentas;
+
+import static org.junit.Assert.*;
+
+import org.jmock.integration.junit4.JUnitRuleMockery;
+import org.junit.Rule;
+import org.junit.Test;
+
+import operativa.cuentas.GestorCuentas;
+import operativa.cuentas.ServicioCuentas;
+import operativa.cuentas.ServicioDivisas;
+
+public class ServicioCuentasTest {
+
+	@Rule
+	 public JUnitRuleMockery context = new JUnitRuleMockery();
+	
+	 final GestorCuentas warehouseMock = context.mock(GestorCuentas.class);
+	 public ServicioCuentas sc;
+	 public ServicioDivisas sd;		//Requiere del estado del objeto para ser Stub
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

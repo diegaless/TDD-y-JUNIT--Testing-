@@ -1,0 +1,266 @@
+package utilidades;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class ListaIntTest {
+
+	private ListaInt lista;
+	private ListaInt listaVacia;
+	private ListaInt lista1;
+	private ListaInt lista2;
+	
+	@Before
+	public void setUp() throws Exception {
+		listaVacia = new ListaInt(1);
+		lista1 = new ListaInt(1);
+		lista1.setAt(0, 1);
+		lista2 = new ListaInt(2);
+		lista2.setAt(0, 1);
+		lista2.setAt(1, 2);
+	}
+	
+	//Pruebas construcción
+	@Test (expected = IllegalArgumentException.class)
+	public void testConstructorERROR() {
+		ListaInt lista = new ListaInt(0);
+	}
+	
+	
+	//---------- Pruebas get ----------------------------
+	@Test (expected = IllegalArgumentException.class)
+	public void testgetERROR() {
+		lista = new ListaInt(1);
+		lista.setAt(0,1);
+		lista.get(1);
+	}
+	
+	//------------ Pruebas setAt V(G) = 2 -----------------
+	@Test 
+	public void testseAtOK() {
+		lista = new ListaInt(1);
+		lista.setAt(0,1);
+		assertEquals(1, lista.get(0));
+	}
+	
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void testseAtERROR() {
+		lista = new ListaInt(1);
+		lista.setAt(2,1);
+	}
+	
+	//------------ Pruebas ordenar V(G) = 4 -----------------
+	@Test
+	public void testOrdenarListaVacia() {
+		//Entrada: lista vacía
+		//Salida esperada: lista vacía
+		lista = new ListaInt(1);
+		lista.ordenar();
+		assertEquals(listaVacia, lista);
+	}
+	
+	@Test
+	public void testOrdenarUnElemento(){
+		//Entrada: lista de un elemento   {1}
+		//Salida esperada: la misma lista {1}
+		lista = new ListaInt(1);
+		lista.setAt(0, 1);
+		lista.ordenar();
+		assertEquals(lista1, lista);
+	}
+
+	@Test
+	public void testOrdenarDosElementosDesordenados(){
+		//Entrada: lista de dos elementos desordenados {2, 1}
+		//Salida esperada: lista ordenada {1, 2}
+		lista = new ListaInt(2);
+		lista.setAt(0, 2);
+		lista.setAt(1, 1);
+		lista.ordenar();
+		assertEquals(lista2, lista);
+	}
+	
+	@Test
+	public void testOrdenarDosElementosOrdenados(){
+		//Entrada: lista de dos elementos ordenados {1, 2}
+		//Salida esperada: la misma lista {1, 2}
+		lista = new ListaInt(2);
+		lista.setAt(0, 1);
+		lista.setAt(1, 2);
+		lista.ordenar();
+		assertEquals(lista2, lista);
+	}
+	
+	// -------------------- Pruebas máximo V(G) = 4 -----------
+	
+
+	@Test (expected = IllegalStateException.class)
+	public void testMaximoListaVacia(){
+		//Entrada: lista vacía
+		//Salida esperada: excepción (no cumple la pre)
+		lista = new ListaInt(1);
+		lista.maximo();
+	}
+
+	@Test 
+	public void testMaximoUnElementos(){
+		//Entrada: lista con un elemento {1}
+		//Salida: el elemento que contiene -> 1
+		assertEquals(1, lista1.maximo());
+	}
+	
+	@Test 
+	public void testMaximoDosElementosDescendentes(){
+		//Entrada: lista con dos elementos, segundo menor que el primero {2, 1}
+		//Salida: 2
+		lista = new ListaInt(2);
+		lista.setAt(0, 2);
+		lista.setAt(1, 1);
+		assertEquals(2, lista.maximo());
+	}
+
+	@Test 
+	public void testMaximoDosElementosAscendentes(){
+		//Entrada: lista con dos elementos, segundo mayor que el primero {1, 2}
+		//Salida: 2
+		lista = new ListaInt(2);
+		lista.setAt(0, 1);
+		lista.setAt(1, 2);
+		assertEquals(2, lista.maximo());
+	}
+	
+	//Nuevo caso de prueba atendiendo a la técnica de cobertura de condiciones
+	@Test 
+	public void testMaximoDosElementosIguales(){
+		//Entrada: lista con dos elementos iguales {1, 1}
+		//Salida: 1
+		lista = new ListaInt(2);
+		lista.setAt(0, 1);
+		lista.setAt(1, 1);
+		assertEquals(1, lista.maximo());
+	}
+	
+	
+	@Test (expected = IllegalStateException.class)
+	public void removeAllListaVacia(){
+		//Entrada lista vacia
+		//Salida esperada : Excepcion
+		lista = new ListaInt(1);
+		lista.removeAll(5);
+	}
+	
+	@Test
+	public void removeAllValorNoEncontrado(){
+		//Entrada: Lista con un elemento {4}
+		//Salida esperada: 0
+		lista = new ListaInt(1);
+		lista.setAt(0,4);
+		assertEquals(0,lista.removeAll(5));
+	}
+	@Test
+	public void removeAllValorEncontrado(){
+		//Entrada: Lista con un elemento {5}
+		//Salida esperada: 1
+		lista = new ListaInt(1);
+		lista.setAt(0,5);
+		assertEquals(1,lista.removeAll(5));
+	}
+	@Test
+	public void existeAcumuladoCase1(){
+		//Entrada: Lista con un elemento {2}
+		//Salida esperada : false
+		lista = new ListaInt(1);
+		lista.setAt(0,2);
+		assertFalse(lista.existeAcumulado());
+	}
+	@Test
+	public void existeAcumuladoCase2(){
+		//Entrada: Lista con dos elemento {2,2}
+		//Salida esperada : true
+		lista = new ListaInt(2);
+		lista.setAt(0,2);
+		lista.setAt(1,2);
+		assertTrue(lista.existeAcumulado());
+		
+	}
+	
+	@Test
+	public void existeAcumuladoCase2Else(){
+		//Entrada: Lista con dos elemento {2,3}
+		//Salida esperada : false
+		lista = new ListaInt(2);
+		lista.setAt(0,2);
+		lista.setAt(1,3);
+		assertFalse(lista.existeAcumulado());
+		
+	}
+	@Test
+	public void existeAcumuladoDefaultTrue(){
+		//Entrada: Lista con tres elemento {2,1,1}
+		//Salida esperada : true
+		lista = new ListaInt(2);
+		lista.setAt(0,2);
+		lista.setAt(1,2);
+		//lista.setAt(1,1);
+		assertTrue(lista.existeAcumulado());
+	}
+	
+	@Test
+	public void existeAcumuladoDefaultTrue2(){
+		//Entrada: Lista con tres elemento {2,1,1}
+		//Salida esperada : true
+		lista = new ListaInt(3);
+		lista.setAt(0,2);
+		lista.setAt(1,0);
+		lista.setAt(2,2);
+		assertTrue(lista.existeAcumulado());
+	}
+	
+	@Test
+	public void existeAcumuladoDefaultFalse(){
+		//Entrada: Lista con tres elemento {2,4,4}
+		//Salida esperada : false
+		lista = new ListaInt(3);
+		lista.setAt(0,2);
+		lista.setAt(1,4);
+		lista.setAt(2,4);
+		assertFalse(lista.existeAcumulado());
+	}
+	@Test
+	public void isValidoTestTrue(){
+		lista = new ListaInt(3);
+		assertTrue(lista.isValido(2));
+	}
+	
+	@Test
+	public void isValidoTestFalse(){
+		lista = new ListaInt(3);
+		assertFalse(lista.isValido(4));
+	}
+	
+	@Test
+	public void isValidoTest3(){
+		lista = new ListaInt(3);
+		assertFalse(lista.isValido(-1));
+	}
+	
+	@Test
+	public void isValidoTest4(){
+		lista = new ListaInt(3);
+		assertTrue(lista.isValido(0));
+	}
+	
+	@Test
+	public void isValidoTest5(){
+		lista = new ListaInt(3);
+		assertFalse(lista.isValido(3));
+	}
+	
+	
+	
+	
+
+}

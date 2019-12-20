@@ -1,0 +1,45 @@
+package test.operativa.cuentas;
+
+import static org.junit.Assert.*;
+
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JUnitRuleMockery;
+import org.junit.Rule;
+import org.junit.Test;
+
+import operativa.cuentas.Cuenta;
+import operativa.cuentas.Divisa;
+import operativa.cuentas.GestorCuentas;
+import operativa.cuentas.ServicioCuentas;
+import operativa.cuentas.ServicioDivisas;
+import static org.hamcrest.CoreMatchers.instanceOf;
+
+public class ServicioCuentasTest {
+
+	
+	private String titular;
+	private double saldoInicial;
+	private Divisa divisa;
+	
+	@Rule
+	 public JUnitRuleMockery context = new JUnitRuleMockery();
+	
+	 final GestorCuentas gestorCuentasMock = context.mock(GestorCuentas.class);	//Mock
+	 private static ServicioCuentas sc = new ServicioCuentas();
+	 public ServicioDivisas sdt;		//Requiere del estado del objeto para ser Stub
+
+	
+	 
+	 @Test
+	public void testAbrirCuenta1() {
+		 context.checking(new Expectations(){{
+			 oneOf (gestorCuentasMock).alta(with(any(Cuenta.class)));
+		}});
+		
+		sc.setGestorCuentas(gestorCuentasMock);
+		assertThat(actual, matcher);
+	}
+	 
+	
+
+}

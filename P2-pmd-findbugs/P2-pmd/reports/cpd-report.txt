@@ -1,0 +1,101 @@
+Found a 28 line (133 tokens) duplication in the following files: 
+Starting at line 117 of C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-pmd\src\juego\geometria\Punto.java
+Starting at line 117 of C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-pmd\src\juego\geometria\CopyOfPunto.java
+
+	public double distancia (Punto posicion) {
+	    
+	    double param3 = this.y-posicion.y;
+	    double param4 = this.x-posicion.x;
+	    double param1 = Math.pow(param3, 2);
+	    double param2 = Math.pow(param4, 2);
+	    
+	   return Math.sqrt(param2+param1);
+	}
+
+	@Override
+	public String toString() {
+		return getClass().getName() + " [x=" + x + ", y=" + y + "]"; // NOPMD by Alumno on 3/10/18 18:24 Invocacion al metodo de la clase para obtener su nombre
+	}
+
+	@Override
+    public int hashCode() {
+         int prime = 31;
+        int result = 1;
+        result = prime * result + x;
+        result = prime * result + y;
+        return result;
+    }
+
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+=====================================================================
+Found a 17 line (89 tokens) duplication in the following files: 
+Starting at line 83 of C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-pmd\src\juego\geometria\Punto.java
+Starting at line 83 of C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-pmd\src\juego\geometria\CopyOfPunto.java
+
+	public Direccion situacion_relativa(Punto otra){
+	    int difX = Math.abs(x - otra.x);
+	    int difY = Math.abs(y - otra.y);
+
+		if (difY == 1 && difX == 0)
+			return Direccion.ARRIBA;
+		if (difY == 1 && difX == 0)
+			return Direccion.ABAJO;
+		if (difY == 0 && difX == 1)
+			return Direccion.IZQUIERDA;
+		if (difY == 0 && difX == 1)
+			return Direccion.DERECHA;
+		
+		return null;
+	}
+	
+	public Punto desplazar(int incX, int incY){
+=====================================================================
+Found a 15 line (63 tokens) duplication in the following files: 
+Starting at line 103 of C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-pmd\src\juego\geometria\Punto.java
+Starting at line 103 of C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-pmd\src\juego\geometria\CopyOfPunto.java
+
+	public Punto desplazar(Direccion direccion){
+	    switch (direccion){
+	    case ARRIBA : return desplazar(0,1);
+	    case ABAJO: return desplazar(0,-1);
+	    case DERECHA: return desplazar(1, 0);
+	    case IZQUIERDA: return desplazar(-1,0);
+	    default:
+	        return null;
+	    }
+	}
+
+	/** Calcula la distancia entre dos posiciones.
+	 *
+	 */
+	public double distancia (Punto posicion) {
+=====================================================================
+Found a 22 line (33 tokens) duplication in the following files: 
+Starting at line 29 of C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-pmd\src\juego\geometria\Punto.java
+Starting at line 29 of C:\Users\Alumno\Desktop\Calso\P2-pmd-findbugs\P2-pmd\src\juego\geometria\CopyOfPunto.java
+
+	public Punto(Punto otra) {
+		this(otra.x, otra.y);
+	}
+
+    /** Devuelve el valor de la coordenada x
+     * 
+     */
+    public int getX() {
+        return x;
+    }
+
+    /** Devuelve el valor de la coordenada x
+     * 
+     */
+    public int getY() {
+        return y;
+    }
+
+	/** Devuelve un nuevo objeto Posicion que representa el valor de la posición
+	 *  adyacente a la instancia actual en la dirección pasada como parámetro.
+	 */
+	public Punto Adyacente(Direccion direccion) {
